@@ -1,0 +1,12 @@
+1. Setup simple architecture
+  - What do we need?
+      Components
+        Game control buttons
+        Game grid
+        Game play state - import logic from conwayLogic.js (doublebuffering)
+        Preloaded patterns
+  
+
+
+      
+      
