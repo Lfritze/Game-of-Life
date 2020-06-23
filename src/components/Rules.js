@@ -1,26 +1,38 @@
-import React, { Component } from 'react';
-import HeaderTop from './components/HeaderTop';
-import GamePlay from './components/GamePlay';
-import { Divider } from 'semantic-ui-react';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Popper from '@material-ui/core/Popper';
 
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    border: '1px solid',
+    padding: theme.spacing(1),
+    backgroundColor: theme.palette.background.paper,
+  },
+}));
 
-class App extends Component {
+export default function SimplePopper() {
+  const classes = useStyles();
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
-  render() {
-    return (
-      <div>
-        <HeaderTop />
-        <Divider />
-        
-        <GamePlay />
+  const handleClick = (event) => {
+    setAnchorEl(anchorEl ? null : event.currentTarget);
+  };
 
-        <div className="rules" style={{ width: "50%", margin: "0 auto", marginBottom: "10%"}}>
-          <h2 style={{color: "#fff", padding: "15px 0 12px 0", margin: "0 auto", textAlign: "center"}}>Rules</h2>
+  const open = Boolean(anchorEl);
+  const id = open ? 'simple-popper' : undefined;
 
-          <p style={{textAlign: "left"}}> 
+  return (
+    <div>
+      <button aria-describedby={id} type="button" onClick={handleClick}>
+        Toggle Popper
+      </button>
+      <Popper id={id} open={open} anchorEl={anchorEl}>
+        <div className={classes.paper}>
+
+          <p> 
           The Game of Life is an infinite, two-dimensional grid of square cells, each of which is in one of two possible states, live or dead.</p>
 
-          <p style={{textAlign: "left"}}> Every cell interacts with its eight neighbours, which are the cells that are horizontally, vertically, or diagonally adjacent. At each step in time, the following transitions occur:
+          <p> Every cell interacts with its eight neighbours, which are the cells that are horizontally, vertically, or diagonally adjacent. At each step in time, the following transitions occur:
             <ul>
               <li> Any live cell with fewer than two live neighbours dies, as if by underpopulation.</li>
           
@@ -43,12 +55,9 @@ class App extends Component {
           </ul>
           
           The initial pattern constitutes the seed of the system. The first generation is created by applying the above rules simultaneously to every cell in the seed; births and deaths occur simultaneously, and the discrete moment at which this happens is sometimes called a tick. Each generation is a pure function of the preceding one. The rules continue to be applied repeatedly to create further generations.</p>
-          </div>
         
         </div>
-
-    );
-  }
+      </Popper>
+    </div>
+  );
 }
-
-export default App;

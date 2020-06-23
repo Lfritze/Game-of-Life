@@ -1,0 +1,52 @@
+1. Setup simple architecture
+  - What do we need?
+      Components
+        Game control buttons
+        Game grid
+        Game play state - import logic from conwayLogic.js (doublebuffering)
+        Preloaded patterns
+  
+gamePlay.js will import, 
+  gameGrid, 
+  gameButtons, 
+  samplePatterns, 
+  logic in conwayLogic,
+  samplePatternData
+
+________________________________________________
+
+Let's start by writing the logic now
+
+2. conwayLogic.js Implementation 
+
+  alive = 1
+  dead = 0
+
+  Let's try Von Neumann neighborhood
+  https://en.wikipedia.org/wiki/Von_Neumann_neighborhood
+
+
+________________________________________________
+
+3. Let's start making the gameGrid
+
+is cell 0 or 1 ? - ternary
+show cell 
+mouse event
+
+show row - map cell, var - show cell
+
+render <div> board game grid - via props 
+
+________________________________________________
+
+4. Let's start with gamePlay and gameButtons.js
+
+gamePlay is going to import from SamplePatternData, GameGrid, Game Buttons, SamplePatterns and (speedKills,  nextGeneration, createBoard, randomMix) from conwayLogic
+
+________________________________________________
+
+5. Work on pre-loaded pattern data
+
+
+      
