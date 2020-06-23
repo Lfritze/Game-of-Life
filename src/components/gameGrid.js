@@ -1,26 +1,26 @@
 import React from 'react';
-import { newArrVal } from '../conwayLogic';
+import { transformArrVal } from '../conwayLogic';
 
 class GameGrid extends React.Component {
 
-  ternaryCell = (cell, x, y) => {
+  ternaryToggleCell = (cell, x, y) => {
     const { board } = this.props;
-    const row = newArrVal(board[y], x, cell ? 0 : 1);
-    const newBoard = newArrVal(board, y, row);
-    this.props.onChange(newBoard);
+    const row = transformArrVal(board[y], x, cell ? 0 : 1);
+    const newboard = transformArrVal(board, y, row);
+    this.props.onChange(newboard);
   }
 
   showCell = (cell, x, y) => {
     return (
       <div key={x}
-        className='show-cell'
-        onMouseDown={() => this.ternaryCell(cell, x, y)}
-        style={{ backgroundColor: cell ? '#424151' : null }}
+        className='cell'
+        onMouseDown={() => this.ternaryToggleCell(cell, x, y)}
+        style={{ backgroundColor: cell ? '#228B22' : null }}
       />
     );
   }
 
-  showRow= (row, y) => (
+  showRow = (row, y) => (
     <div className='row' key={y}>
       {row.map((cell, x) => this.showCell(cell, x, y))}
     </div>

@@ -2,20 +2,20 @@ import React from 'react';
 import { Dropdown, Button } from 'semantic-ui-react';
 
 const options = [
-
     { key: 'glider', value: 'glider', text: 'Glider' },
-    
+    { key: 'diehard', value: 'diehard', text: 'Diehard' },
+    { key: 'gliderGun', value: 'gliderGun', text: 'Gosper Glider Gun' }
 ];
 
 class SamplePatterns extends React.Component {
 
     state = {
-        sample: 'glider'
+        pattern: ''
     }
 
     onLoad = () => {
-        const { sample } = this.state;
-        return sample ? this.props.load(sample) : null;
+        const { pattern } = this.state;
+        return pattern ? this.props.load(pattern) : null;
     }
 
     render() {
@@ -27,13 +27,13 @@ class SamplePatterns extends React.Component {
                         options={options}
                         selection
                         className='label'
-                        value={this.state.sample}
-                        onChange={(e, { value }) => this.setState({ sample: value })}
+                        value={this.state.pattern}
+                        onChange={(e, { value }) => this.setState({ pattern: value })}
                     />
                     <Button
                         content='Load'
                         onClick={this.onLoad}
-                        disabled={this.props.playing}
+                        disabled={this.props.running}
                     />
                 </Button>
             </div>
