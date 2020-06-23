@@ -44,7 +44,9 @@ ________________________________________________
 
 gamePlay is going to import from SamplePatternData, GameGrid, Game Buttons, SamplePatterns and (speedKills,  nextGeneration, createBoard, randomMix) from conwayLogic
 
+________________________________________________
 
+5. Work on pre-loaded pattern data
 
 
       

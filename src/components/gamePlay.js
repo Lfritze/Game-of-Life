@@ -2,13 +2,13 @@ import React from 'react';
 import GameGrid from './gameGrid';
 import GameButtons from './gameButtons';
 import SamplePatterns from './samplePatterns';
-import { speedKills,  nextGeneration, createBoard, randomMix } from '../conwayLogic';
+import { speedKills,  nextGeneration, makeBoard, randomMix } from '../conwayLogic';
 import { SamplePatternData } from '../samplePatternData';
 
 class GamePlay extends React.Component {
 
   state = {
-    board: SamplePatternData('line'),
+    board: SamplePatternData('glider'),
     generation: 0,
     running: false,
   }
@@ -20,11 +20,11 @@ class GamePlay extends React.Component {
 
   onChange = board => this.updateState(board, this.state.generation + 1);
 
-  onClear = () => this.updateState(createBoard(), 0);
+  onClear = () => this.updateState(makeBoard(), 0);
 
   onRandomMix = () => this.updateState(randomMix(this.state.board), 0);
 
-  onSamplePatterns  = pattern => this.updateState(loadSamplePattern(pattern), 0);
+  onSamplePatterns  = pattern => this.updateState(SamplePatterns(pattern), 0);
 
   onNext = () => this.onChange(nextGeneration(this.state.board));
 

@@ -29,7 +29,7 @@ class GameGrid extends React.Component {
   render() {
     return (
       <div className='game-grid'>
-        {this.props.board.map((row, y) => this.renderRow(row, y))}
+        {this.props.board.map((row, y) => this.showRow(row, y))}
       </div>
     );
   }

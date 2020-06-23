@@ -28,7 +28,7 @@ export const nextGeneration = board => {
     return newBoard;
 }
 
-export const createBoard = () => {
+export const makeBoard = () => {
     return Array(boardAcreage).fill().map(() => Array(boardAcreage).fill(notAlive));
 }
 
