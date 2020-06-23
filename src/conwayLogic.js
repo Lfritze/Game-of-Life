@@ -6,7 +6,7 @@ export const speedKills = 100;
 // Find our neighbors
 export const VonNeumannNeighbors = (x, y) => {
     return [[x - 1, y - 1], [x, y - 1], [x + 1, y - 1], [x - 1, y], [x + 1, y], [x - 1, y + 1], [x, y + 1], [x + 1, y + 1]]
-        .filter(c =>
+        .filter(von =>
             von[0] >= 0 && von[0] < boardAcreage &&
             von[1] >= 0 && von[1] < boardAcreage
         );
@@ -32,7 +32,7 @@ export const createBoard = () => {
     return Array(boardAcreage).fill().map(() => Array(boardAcreage).fill(notAlive));
 }
 
-export const changeArrayValue = (arr, i, val) => [
+export const newArrVal = (arr, i, val) => [
     ...arr.slice(0, i), val, ...arr.slice(i + 1)
 ];
 
