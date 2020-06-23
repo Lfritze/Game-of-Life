@@ -6,7 +6,24 @@
         Game play state - import logic from conwayLogic.js (doublebuffering)
         Preloaded patterns
   
+gamePlay.js will import, 
+  gameGrid, 
+  gameButtons, 
+  samplePatterns, 
+  logic in conwayLogic,
+  samplePatternData
 
+________________________________________________
 
-      
+Let's start with writing the logic now
+
+2. conwayLogic.js Implementation 
+
+  alive = 1
+  dead = 0
+
+  Let's try Von Neumann neighborhood
+  https://en.wikipedia.org/wiki/Von_Neumann_neighborhood
+
+  
       
