@@ -1,3 +1,4 @@
+## Implemented in React
 ## John Conway's Game of Life
 Conway's Game of Life is a cellular automaton devised by the British mathematician John Horton Conway. It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves. It is Turing complete and can simulate a universal constructor or any other Turing machine.
 
@@ -41,6 +42,25 @@ These rules, which compare the behavior of the automaton to real life, can be co
   
 The initial pattern constitutes the seed of the system. The first generation is created by applying the above rules simultaneously to every cell in the seed; births and deaths occur simultaneously, and the discrete moment at which this happens is sometimes called a tick. Each generation is a pure function of the preceding one. The rules continue to be applied repeatedly to create further generations.
 In the project directory, you can run:
+
+## Project Implementation
+1. The Game Board is a Class Component (gameGrid.js)
+  * The grid is created using divs
+  * The cell borders are created in CSS
+  
+2. The data structure utilizes the Moore Neighborhood of 8 neighbors- Pixel Connectivity
+  * [x - 1, y - 1], [x, y - 1], [x + 1, y - 1], [x - 1, y], [x + 1, y], [x - 1, y + 1], [x, y + 1], [x + 1, y + 1]
+  * 8-connected pixels are neighbors to every pixel that touches one of their edges or corners. 
+  * Note this is similar to the array of operations:   
+  [0, 1],
+  [0, -1],
+  [1, -1],
+  [-1, 1],
+  [1, 1],
+  [-1, -1],
+  [1, 0],
+  [-1, 0]
+
 
 ### `yarn start`
 
