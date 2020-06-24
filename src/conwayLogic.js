@@ -4,7 +4,16 @@ export const boardAcreage = 70;
 export const speedPerGen = 100;
 
 export const eightNeighbors = (x, y) => {
-    return [[x - 1, y - 1], [x, y - 1], [x + 1, y - 1], [x - 1, y], [x + 1, y], [x - 1, y + 1], [x, y + 1], [x + 1, y + 1]]
+    return [
+    [x - 1, y - 1], 
+    [x, y - 1], 
+    [x + 1, y - 1], 
+    [x - 1, y], 
+    [x + 1, y], 
+    [x - 1, y + 1], 
+    [x, y + 1], 
+    [x + 1, y + 1]
+]
         .filter(z =>
             z[0] >= 0 && z[0] < boardAcreage &&
             z[1] >= 0 && z[1] < boardAcreage
