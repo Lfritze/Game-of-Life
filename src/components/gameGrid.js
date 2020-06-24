@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { transformArrVal } from '../conwayLogic';
 
-class GameGrid extends React.Component {
+class GameGrid extends Component {
 
   ternaryToggleCell = (cell, x, y) => {
     const { board } = this.props;
@@ -15,7 +15,7 @@ class GameGrid extends React.Component {
       <div key={x}
         className='cell'
         onMouseDown={() => this.ternaryToggleCell(cell, x, y)}
-        style={{ backgroundColor: cell ? '#228B22' : null }}
+        style={{ backgroundColor: cell ? '#1c5252' : null }}
       />
     );
   }

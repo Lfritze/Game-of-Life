@@ -3,7 +3,7 @@ export const notAlive = 0;
 export const boardAcreage = 70;
 export const speedPerGen = 100;
 
-export const vonNeumanNeighbors = (x, y) => {
+export const eightNeighbors = (x, y) => {
     return [[x - 1, y - 1], [x, y - 1], [x + 1, y - 1], [x - 1, y], [x + 1, y], [x - 1, y + 1], [x, y + 1], [x + 1, y + 1]]
         .filter(z =>
             z[0] >= 0 && z[0] < boardAcreage &&
@@ -12,7 +12,7 @@ export const vonNeumanNeighbors = (x, y) => {
 }
 
 export const neighborsAlive = (board, x, y) => {
-    return vonNeumanNeighbors(x, y).filter(n => board[n[0]][n[1]] === notDead).length;
+    return eightNeighbors(x, y).filter(n => board[n[0]][n[1]] === notDead).length;
 }
 
 export const nextGen = board => {

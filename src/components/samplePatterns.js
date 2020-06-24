@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Dropdown, Button } from 'semantic-ui-react';
 
 const options = [
-    { key: 'glider', value: 'glider', text: 'Glider' },
-    { key: 'diehard', value: 'diehard', text: 'Diehard' },
-    { key: 'gliderGun', value: 'gliderGun', text: 'Gosper Glider Gun' }
+    { key: 'glider', value: 'glider', text: 'Lonely Waddler' },
+    { key: 'diehard', value: 'diehard', text: 'Bruce Willis' },
+    { key: 'gliderGun', value: 'gliderGun', text: 'Rabbit Babies' }
 ];
 
-class SamplePatterns extends React.Component {
+class SamplePatterns extends Component {
 
     state = {
         pattern: ''
@@ -23,7 +23,7 @@ class SamplePatterns extends React.Component {
             <div className='controls'>
                 <Button as='div' labelPosition='left'>
                     <Dropdown
-                        placeholder='Select a pattern'
+                        placeholder='Select a Pattern'
                         options={options}
                         selection
                         className='label'

@@ -3,9 +3,9 @@ import { Header } from 'semantic-ui-react';
 
 export default () => (
   <Header as='h2' icon inverted textAlign='center' className='title'>
-    Game of Life...or Death!
+    John Conway's Game of Life!
       <Header.Subheader>
-      Cellular Automata via Von Neuman Neighbors
+      Cellular Automata Pixel Connectivity
       </Header.Subheader>
   </Header>
 
