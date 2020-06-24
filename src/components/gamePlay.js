@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 import GameGrid from './gameGrid';
 import GameButtons from './GameButtons';
 import SamplePatterns from './SamplePatterns';
 import { speedPerGen, makeBoard, nextGen, randomize } from '../conwayLogic';
 import { samplePatternData } from '../samplePatternData';
 
-class GamePlay extends React.Component {
+class GamePlay extends Component {
 
   state = {
-    board: samplePatternData('line'),
+    board: samplePatternData(''),
     generation: 0,
     running: false,
   }

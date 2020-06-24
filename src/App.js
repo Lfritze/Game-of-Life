@@ -9,10 +9,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <HeaderTop />
-        <Divider />
-        
+        <HeaderTop />  
         <GamePlay />
+        <Divider />
 
         <div className="rules" style={{ width: "50%", margin: "0 auto", marginBottom: "10%"}}>
           <h2 style={{color: "#fff", padding: "15px 0 12px 0", margin: "0 auto", textAlign: "center"}}>Rules</h2>
