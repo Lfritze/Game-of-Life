@@ -7,7 +7,7 @@ const GameButtons = (props) => (
       <Button content='Stop' icon='stop' labelPosition='right' onClick={props.stop} /> :
       <Button content='Start' icon='play' labelPosition='right' onClick={props.play} />
     }
-    <Button content='Clear' icon='x icon' labelPosition='right' onClick={props.clear} />
+    <Button content='Clear' icon='x' labelPosition='right' onClick={props.clear} />
     <Button content='Randomize' icon='arrows alternate' labelPosition='right'
       onClick={props.randomize} disabled={props.running}
     />
