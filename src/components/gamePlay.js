@@ -42,7 +42,6 @@ class GamePlay extends Component {
     const { board, running } = this.state;
     return (
       <div>
-        
         <GameButtons
           clear={this.onClear}
           next={this.onNext}
